@@ -1,0 +1,208 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Fonts/8bitWonder.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/2DGoreUI/Button_Flesh_Pressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/2DGoreUI/Gauge_ZombieSkin_Thick_Full.png" type="Texture" id=3]
+[ext_resource path="res://Assets/2DGoreUI/Button_Flesh.png" type="Texture" id=4]
+[ext_resource path="res://Assets/ui/Credits.png" type="Texture" id=5]
+[ext_resource path="res://Assets/ui/Controllers.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Menu.gd" type="Script" id=7]
+[ext_resource path="res://Assets/audio/DarkZombieSC.wav" type="AudioStream" id=8]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+
+[node name="AudioBackground" type="AudioStreamPlayer2D" parent="Menu"]
+stream = ExtResource( 8 )
+
+[node name="MainMenu" type="MarginContainer" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="background" type="TextureRect" parent="Menu/MainMenu"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( -625, 72 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="btn_play" type="TextureButton" parent="Menu/MainMenu/background"]
+margin_left = 356.0
+margin_top = 190.0
+margin_right = 676.0
+margin_bottom = 270.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="label_play" type="Label" parent="Menu/MainMenu/background/btn_play"]
+margin_left = 107.0
+margin_top = 14.0
+margin_right = 257.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 1 )
+text = "Jogar"
+
+[node name="btn_controllers" type="TextureButton" parent="Menu/MainMenu/background"]
+margin_left = 358.0
+margin_top = 288.0
+margin_right = 678.0
+margin_bottom = 368.0
+rect_pivot_offset = Vector2( 67, 80 )
+size_flags_horizontal = 6
+size_flags_vertical = 2
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="label_controllers" type="Label" parent="Menu/MainMenu/background/btn_controllers"]
+margin_left = 71.0
+margin_top = 14.0
+margin_right = 251.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 1 )
+text = "Controles"
+
+[node name="btn_credits" type="TextureButton" parent="Menu/MainMenu/background"]
+margin_left = 360.0
+margin_top = 385.0
+margin_right = 680.0
+margin_bottom = 465.0
+rect_pivot_offset = Vector2( 67, 80 )
+size_flags_horizontal = 6
+size_flags_vertical = 2
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="label_credits" type="Label" parent="Menu/MainMenu/background/btn_credits"]
+margin_left = 79.0
+margin_top = 14.0
+margin_right = 229.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 1 )
+text = "creditos"
+
+[node name="Credits" type="MarginContainer" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1536.0
+margin_top = -300.0
+margin_right = -512.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="background" type="TextureRect" parent="Menu/Credits"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( -625, 72 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="btn_return" type="TextureButton" parent="Menu/Credits/background"]
+margin_left = 662.0
+margin_top = 504.0
+margin_right = 1002.0
+margin_bottom = 584.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="label_return" type="Label" parent="Menu/Credits/background/btn_return"]
+margin_left = 109.0
+margin_top = 14.0
+margin_right = 259.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 1 )
+text = "voltar"
+
+[node name="Credits2" type="Sprite" parent="Menu/Credits"]
+position = Vector2( 511.75, 301 )
+scale = Vector2( 0.990723, 0.864706 )
+texture = ExtResource( 5 )
+
+[node name="Controllers" type="MarginContainer" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 512.0
+margin_top = -300.0
+margin_right = 1536.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="background" type="TextureRect" parent="Menu/Controllers"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( -625, 72 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="btn_return" type="TextureButton" parent="Menu/Controllers/background"]
+margin_left = 662.0
+margin_top = 504.0
+margin_right = 1002.0
+margin_bottom = 584.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="label_return" type="Label" parent="Menu/Controllers/background/btn_return"]
+margin_left = 109.0
+margin_top = 14.0
+margin_right = 259.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 1 )
+text = "voltar"
+
+[node name="Controllers" type="Sprite" parent="Menu/Controllers"]
+position = Vector2( 540, 359 )
+scale = Vector2( 1, 0.989706 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="Menu/MainMenu/background/btn_play" to="Menu" method="_on_btn_play_pressed"]
+[connection signal="pressed" from="Menu/MainMenu/background/btn_controllers" to="Menu" method="_on_btn_controllers_pressed"]
+[connection signal="pressed" from="Menu/MainMenu/background/btn_credits" to="Menu" method="_on_btn_credits_pressed"]
+[connection signal="pressed" from="Menu/Credits/background/btn_return" to="Menu" method="_on_btn_return_pressed"]
+[connection signal="pressed" from="Menu/Controllers/background/btn_return" to="Menu" method="_on_btn_return_pressed"]

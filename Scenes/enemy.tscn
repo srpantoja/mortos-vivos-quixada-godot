@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Characters/characters.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/enemy.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 9, 20.5 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "enemy_walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Position2D/Sprite:frame_coords")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ), Vector2( 1, 2 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 9.0
+
+[sub_resource type="StyleBoxLine" id=6]
+color = Color( 1, 0, 0, 1 )
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id=7]
+thickness = 10
+
+[node name="enemy" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -6, -1.5 )
+shape = SubResource( 5 )
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Position2D"]
+position = Vector2( -4, -1 )
+scale = Vector2( 0.61875, 0.61875 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 8
+frame = 17
+
+[node name="AnimationEnemy" type="AnimationPlayer" parent="Position2D"]
+root_node = NodePath("../..")
+anims/enemy_walk = SubResource( 2 )
+anims/idle = SubResource( 3 )
+
+[node name="attackbody" type="Area2D" parent="Position2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Position2D/attackbody"]
+position = Vector2( 12, 0 )
+shape = SubResource( 4 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -19.0
+margin_top = 21.0
+margin_right = 45.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+max_value = 3.0
+step = 0.0
+percent_visible = false
+
+[connection signal="child_entered_tree" from="." to="." method="_on_enemy_child_entered_tree"]
+[connection signal="body_entered" from="Position2D/attackbody" to="." method="_on_attackbody_body_entered"]

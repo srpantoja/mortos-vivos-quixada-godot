@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LeafLegion - Zombie game music 1.mp3-ca6e396c184ff6545247264031c769a1.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/LeafLegion - Zombie game music 1.mp3"
+dest_files=[ "res://.import/LeafLegion - Zombie game music 1.mp3-ca6e396c184ff6545247264031c769a1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
