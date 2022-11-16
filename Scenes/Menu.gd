@@ -8,9 +8,6 @@ onready var main_menu := $MainMenu
 onready var credits_menu := $Credits
 onready var controllers_menu := $Controllers
 
-func _process(delta):
-	if $AudioBackground.playing == false:
-		$AudioBackground.play()
 
 func _ready():
 	menu_origin_position = Vector2(0,0)
@@ -34,8 +31,6 @@ func move_to_previous_menu():
 	
 func get_menu_from_menu_id(menu_id: String):
 	match menu_id:
-		"main_menu":
-			return main_menu
 		"credits_menu":
 			return credits_menu
 		"controllers_menu":

@@ -1,0 +1,31 @@
+/mnt/d/TCC/Godot/MortosVivosQuixadá/Scenes/bullet.gd
+    F 6:0 check_bullet_direction - A (2)
+    F 10:0 _physics_process - A (1)
+    F 13:0 _on_VisibilityNotifier2D_screen_exited - A (1)
+    F 15:0 _on_bullet_body_entered - A (3)
+/mnt/d/TCC/Godot/MortosVivosQuixadá/Scenes/enemy.gd
+    F 6:0 _physics_process - A (3)
+    F 18:0 _on_attackbody_body_entered - A (3)
+/mnt/d/TCC/Godot/MortosVivosQuixadá/Scenes/game.gd
+    F 8:0 _physics_process - A (5)
+    F 18:0 shoot - A (2)
+    F 27:0 _ready - A (2)
+    F 33:0 enemy_wave - A (1)
+    F 37:0 _on_Timer_timeout - A (1)
+/mnt/d/TCC/Godot/MortosVivosQuixadá/Scenes/game_over.gd
+    F 2:0 _process - A (2)
+/mnt/d/TCC/Godot/MortosVivosQuixadá/Scenes/hud.gd
+    F 3:0 _process - A (3)
+/mnt/d/TCC/Godot/MortosVivosQuixadá/Scenes/Menu.gd
+    F 9:0 _process - A (2)
+    F 12:0 _ready - A (1)
+    F 16:0 move_to_next_menu - A (1)
+    F 22:0 move_to_previous_menu - A (2)
+    F 28:0 get_menu_from_menu_id - A (5)
+    F 40:0 _on_btn_controllers_pressed - A (1)
+    F 42:0 _on_btn_credits_pressed - A (1)
+    F 44:0 _on_btn_return_pressed - A (1)
+    F 46:0 _on_btn_play_pressed - A (1)
+/mnt/d/TCC/Godot/MortosVivosQuixadá/Scenes/Player.gd
+    F 11:0 _physics_process - B (7)
+    F 35:0 sum_score - A (1)

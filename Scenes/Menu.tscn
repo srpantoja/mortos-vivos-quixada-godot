@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Fonts/8bitWonder.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/2DGoreUI/Button_Flesh_Pressed.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/ui/Controllers.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Menu.gd" type="Script" id=7]
 [ext_resource path="res://Assets/audio/DarkZombieSC.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/AudioBackground.gd" type="Script" id=9]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -16,8 +17,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
 
-[node name="AudioBackground" type="AudioStreamPlayer2D" parent="Menu"]
+[node name="AudioBackground" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="MainMenu" type="MarginContainer" parent="Menu"]
 anchor_left = 0.5

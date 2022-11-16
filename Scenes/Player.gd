@@ -1,5 +1,8 @@
 extends KinematicBody2D
 onready var position2D = $Position2D
+var bullet_path := preload('res://Scenes/bullet.tscn')
+onready var projectiles = get_node("/root/game/projectiles")
+onready var audio_bullets = get_node("/root/game/AudioBullets")
 export(int) var speed = 200.0
 var velocity : Vector2
 var max_speed = 200
@@ -8,8 +11,31 @@ var score = 0
 var direction
 var life = 5
 var level = 1
+var next_level = 100
 
 func _physics_process(delta):
+	movement(delta)
+	shoot()
+	level_up()
+	
+func level_up():
+	if score >= next_level:
+		level += 1
+		next_level = (100 * level) * 1.5
+		
+func shoot():
+	var show_wapeon = Input.is_action_just_pressed("ui_select")
+	if show_wapeon:
+		var bullet = bullet_path.instance()
+		if sign(position2D.scale.x) == 1:
+			bullet.check_bullet_direction(1)
+		else:
+			bullet.check_bullet_direction(-1)
+		projectiles.get_parent().add_child(bullet)
+		bullet.position = position2D.get_node("Node2D").global_position
+		audio_bullets.play()
+	
+func movement(delta):
 	var input_vector = Vector2.ZERO
 	direction = (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
 	input_vector.x += direction
