@@ -6,8 +6,6 @@ var height = 200
 
 func _ready():
 	var level = 1
-	if player:
-		level = player.level
 	$Timer.wait_time = 1/level
 	$Timer.start()
 	
